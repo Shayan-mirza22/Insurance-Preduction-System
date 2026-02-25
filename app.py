@@ -43,11 +43,11 @@ class UserINPUT(BaseModel):
     @property
     def lifestyle_risk(self) -> str:
         if self.smoker and self.bmi > 30:
-            return "high"
+            return "High Risk"
         elif self.smoker or self.bmi > 27:
-            return "medium"
+            return "Medium Risk"
         else:
-            return "low"
+            return "Low Risk"
         
     @computed_field
     @property
@@ -75,7 +75,7 @@ def predict_premium(data: UserINPUT):
     input_df = pd.DataFrame([{
         'bmi' : data.bmi,
         'age_group' : data.age_group,
-        'lifestyle_risk' : data.lifestyle_risk,
+        'Life_style_risk' : data.lifestyle_risk,
         'city_tier' : data.city_tier,
         'income_lpa' : data.income_lpa,
         'occupation' : data.occupation
