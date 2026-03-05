@@ -12,8 +12,7 @@ class UserINPUT(BaseModel):
     income_lpa: Annotated[float, Field(..., gt=0, description='Annual Salary of the user in LPA')]
     smoker: Annotated[bool, Field(..., description='Is the user smoker or not?')]
     city: Annotated[str, Field(..., description='The city that the user belongs to')]
-    occupation: Annotated[Literal['retired', 'freelancer', 'student', 'government_job',
-       'business_owner', 'unemployed', 'private_job'], Field(..., description='Occupation of the user among options')]
+    occupation: Annotated[Literal['retired', 'freelancer', 'student', 'government_job', 'business_owner', 'unemployed', 'private_job'], Field(..., description='Occupation of the user among options')]
     
     @field_validator("city")
     @classmethod

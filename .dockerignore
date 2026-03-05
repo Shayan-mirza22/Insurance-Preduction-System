@@ -1,0 +1,7 @@
+.git
+.gitignore
+README.md
+model.ipynb
+insurance.csv
+__pycache__/
+*.pyc
